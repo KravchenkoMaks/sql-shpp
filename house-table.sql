@@ -7,7 +7,6 @@ CREATE TABLE house
     longitude DECIMAL(10, 7) NULL  COMMENT 'Довгота (WGS84)',
     PRIMARY KEY (id),
     UNIQUE KEY uq_house_street_number (street_id, number),
-    KEY       idx_house_street_id (street_id),
     CONSTRAINT fk_house_street
         FOREIGN KEY (street_id) REFERENCES street (id)
             ON DELETE CASCADE
